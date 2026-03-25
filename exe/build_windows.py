@@ -5,14 +5,19 @@ import PyInstaller.__main__
 import os
 import sys
 
+# Устанавливаем кодировку UTF-8 для вывода в Windows
+if sys.platform == 'win32':
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
 print("=" * 60)
-print("Сборка v8unpack для Windows")
+print("Sborka v8unpack dlya Windows")  # Сборка v8unpack для Windows
 print("=" * 60)
 
 # Проверяем что запускаем на Windows
 if os.name != 'nt':
-    print("ВНИМАНИЕ: Этот скрипт предназначен для Windows!")
-    print(f"Текущая ОС: {os.name}")
+    print("VNIMANIE: Etot skript prednaznachen dlya Windows!")  # ВНИМАНИЕ: Этот скрипт предназначен для Windows!
+    print(f"Tekushchaya OS: {os.name}")  # Текущая ОС: {os.name}
 
 PyInstaller.__main__.run([
     'source.py',
@@ -31,9 +36,9 @@ PyInstaller.__main__.run([
 
 print("\n" + "=" * 60)
 if os.path.exists('./dist/v8unpack.exe'):
-    print("✓ Сборка успешна!")
-    print(f"Файл: {os.path.abspath('./dist/v8unpack.exe')}")
-    print(f"Размер: {os.path.getsize('./dist/v8unpack.exe') / 1024 / 1024:.1f} MB")
+    print("SBORKA USPESHNA!")  # Сборка успешна!
+    print(f"File: {os.path.abspath('./dist/v8unpack.exe')}")
+    print(f"Razmer: {os.path.getsize('./dist/v8unpack.exe') / 1024 / 1024:.1f} MB")  # Размер
 else:
-    print("✗ Ошибка сборки!")
+    print("OSHBORKA SBORKI!")  # Ошибка сборки!
 print("=" * 60)
