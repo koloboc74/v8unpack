@@ -14,9 +14,14 @@ docs/_build/
 tmp/
 venv/
 temp/
-tests_tmp/
 temp2/
+tests_tmp/
 tests/*/src/
 tests/*/core/
 *.spec
 /tests/metadata/data/
+*.erf
+*.cf
+*.cfe
+*.epf
+*.cfu
