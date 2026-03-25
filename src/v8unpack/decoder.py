@@ -6,11 +6,13 @@ from . import helper
 from .MetaObject.Configuration import Configuration
 from .MetaObject.ConfigurationExtension import ConfigurationExtension
 from .MetaObject.ExternalDataProcessor import ExternalDataProcessor
+from .MetaObject.ExternalReport import ExternalReport
 from .ext_exception import ExtException
 from .metadata_types import MetaDataTypes
 
 available_types = {
     'ExternalDataProcessor': ExternalDataProcessor,
+    'ExternalReport': ExternalReport,
     'Configuration': Configuration,
     'ConfigurationExtension': ConfigurationExtension
 }
